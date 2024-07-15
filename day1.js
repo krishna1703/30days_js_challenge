@@ -11,6 +11,8 @@ console.log(boolean);
 
 //  data types
 
+
+
 let numbers = 20;
 console.log(numbers);
 console.log(typeof numbers);
