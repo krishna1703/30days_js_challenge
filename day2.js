@@ -126,6 +126,7 @@ console.log(C || D);
 
 // logical operators
 // !
+
 let Login = true;
 
 console.log(Login ? "user loged in" : "not loged in");
@@ -133,7 +134,7 @@ console.log(Login ? "user loged in" : "not loged in");
 
 function positiveNum(num) {
   let result =
-    num >= 0
+    (num >= 0)
       ? `${num} is a positive  number `
       : ` ${num} is a negative number `;
   console.log(result);
