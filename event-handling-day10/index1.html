@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event handling day10</title>
+  </head>
+
+  <body>
+    <h2>Event handling day10</h2>
+    <!-- activity 1  basic event handling  -->
+
+    <!-- task 1  -->
+    <div>
+      <p id="p">this is all baout the event handling in js</p>
+      <button onclick="handleclick()">click me</button>
+    </div>
+    <br />
+    <br />
+    <!-- task 2 -->
+    <div>
+      <img
+        id="image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUENscPbGJ-VPONgBqOeyAJ0X5GrmzFdzeAg&s"
+        width="400px"
+        height="400px"
+        alt="img"
+      />
+    </div>
+
+    <script>
+      //  task 1
+      function handleclick() {
+        document.getElementById("p").textContent =
+          "this is handleclick function ";
+      }
+
+      //  task 2
+
+      let img = document.getElementById("image");
+
+      img.addEventListener("dblclick", function () {
+        if (img.style.display === "none") {
+          img.style.display = "inline-block";
+        } else {
+          img.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

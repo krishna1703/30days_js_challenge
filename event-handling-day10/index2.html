@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event handling</title>
+  </head>
+
+  <body>
+    <!-- mouse event  -->
+    <!-- task 1 -->
+    <!-- mouseover -->
+    <div
+      id="mouseover"
+      style="
+        background-color: black;
+        border: 4px solid yellow;
+        color: whitesmoke;
+        width: 400px;
+        height: 250px;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+      "
+    >
+      <h2>this is the mouseover event</h2>
+    </div>
+    <!-- task1 -->
+    <script>
+      let Div = document.getElementById("mouseover");
+
+      Div.addEventListener("mouseover", changebg);
+
+      function changebg() {
+        Div.style.backgroundColor = "white";
+        Div.style.color = "black";
+      }
+    //   task 2
+
+      Div.addEventListener("mouseout", notchangebg);
+
+      function notchangebg() {
+        Div.style.backgroundColor = "black";
+        Div.style.color = "white";
+      }
+    </script>
+  </body>
+</html>

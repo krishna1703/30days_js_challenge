@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event handling</title>
+  </head>
+
+  <body>
+    <!-- activity keyboard event -->
+    <!-- task1  2 -->
+    <input id="input" />
+    <p id="p">input value</p>
+
+    <script>
+      let input = document.getElementById("input");
+      
+      input.addEventListener("keydown", keydown);
+
+      function keydown(event) {
+        let P = document.getElementById("p");
+        P.textContent = ` value : ${event.key}  ${event.code}`;
+      }
+
+
+      input.addEventListener("keyup", keyup);
+
+      function keyup() {
+        let P = document.getElementById("p");
+        console.log(input.value)
+        P.textContent = input.value
+      }
+    </script>
+  </body>
+</html>

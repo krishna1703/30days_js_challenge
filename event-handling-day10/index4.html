@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event handling</title>
+  </head>
+
+  <body>
+    <!--  activity 4  form event  -->
+    <!-- task1 2  -->
+
+    <form
+      id="my-form"
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 25rem;
+        gap: 2rem;
+        background-color: aquamarine;
+        padding: 2rem;
+        margin: auto;
+      "
+    >
+      <input
+        style="padding: 1rem"
+        id="user"
+        type="text"
+        placeholder="enter your name ..."
+      />
+      <input
+        style="padding: 1rem"
+        id="password"
+        type="number"
+        placeholder="enter your password ..."
+      />
+      <button
+        type="submit"
+        style="width: 5rem; margin-left: auto; padding: 0.5rem"
+      >
+        submit
+      </button>
+    </form>
+
+    <label for="dropdown">choose an option : </label>
+
+    <select id="dropdown">
+      <option value="option 1">option 1</option>
+      <option value="option 2">option 2</option>
+      <option value="option 3">option 3</option>
+      <option value="option 4">option 4</option>
+      <option value="option 5">option 5</option>
+      <option value="option 6">option 6</option>
+    </select>
+
+    <p id="selectedValue">Selected value will be displayed here</p>
+
+    <script>
+      let form = document.getElementById("my-form");
+
+      form.addEventListener("submit", onsubmit);
+
+      function onsubmit(e) {
+        e.preventDefault();
+        console.log("e.preventDefault()");
+        console.log();
+        let username = document.getElementById("user");
+        console.log(username.value);
+        let password = document.getElementById("password");
+        console.log(password.value);
+      }
+
+      let dropdown = document.getElementById("dropdown");
+
+      dropdown.addEventListener("change", Dropdown);
+
+      function Dropdown() {
+        let value = this.value;
+
+         console.log(value)
+        let Pvalue = document.getElementById("selectedValue");
+
+        Pvalue.innerText =`selected value : ${value}`
+      }
+    </script>
+  </body>
+</html>
