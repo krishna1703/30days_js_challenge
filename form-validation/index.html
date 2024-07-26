@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event handling</title>
+  </head>
+
+  <body>
+    <!--  activity 4  form event  -->
+    <!-- task1 2  -->
+
+    <form
+      id="my-form"
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 25rem;
+        gap: 2rem;
+        background-color: aquamarine;
+        padding: 2rem;
+        margin: auto;
+        margin-top: 5%;
+      "
+    >
+      <input
+        style="padding: 1rem"
+        id="user"
+        type="text"
+        placeholder="enter your name ..."
+      />
+
+      <input
+        style="padding: 1rem"
+        id="email"
+        type="text"
+        placeholder="example@example.com ..."
+      />
+      <input
+        style="padding: 1rem"
+        id="password"
+        type="number"
+        placeholder="enter your password ..."
+      />
+      <button
+        type="submit"
+        style="width: 5rem; margin-left: auto; padding: 0.5rem"
+      >
+        submit
+      </button>
+      <span id="error" style="color: red"></span>
+    </form>
+
+    <script>
+      let form = document.getElementById("my-form");
+      form.addEventListener("submit", handlesubmit);
+
+      function handlesubmit(event) {
+        event.preventDefault();
+        console.log("first");
+
+        let isValid = true;
+
+        let errorMessage = [];
+
+        let username = document.getElementById("user").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let errormessage = document.getElementById("error");
+        errormessage.innerHTML = "";
+
+        //   check input field
+
+        //  validation
+        if (username === "") {
+          isValid = false;
+          errorMessage.push(" please fill user name ");
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email === "") {
+          isValid = false;
+          errorMessage.push(" please fill  email ");
+        } else if (!emailPattern.test(email)) {
+          isValid = false;
+          errorMessage.push("please enter a valid email address");
+        }
+
+        if (password === "") {
+          isValid = false;
+          errorMessage.push(" please set your password ");
+        } else if (password.length <= 7) {
+          isValid = false;
+          errorMessage.push("password mush be at least 6 character long.");
+        }
+
+        //  display error message
+        if (!isValid) {
+          errormessage.innerHTML = errorMessage.join("<br>");
+
+        }
+
+         if(isValid){
+
+  errormessage.innerHTML = "successfullty form validation"
+         }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
