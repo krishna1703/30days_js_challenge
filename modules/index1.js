@@ -37,7 +37,13 @@ export default date;
 
 // import entire modules
 
+
+
+
+
 //  using third party modules
+
+
 
 //  lodash  npm package 
 // Lodash
@@ -50,12 +56,9 @@ export default date;
 
 // Import the Lodash library
 
-// import lodash from "lodash";
 
-// let array = [1, 2, 3, 4, 5, 6];
-// const sum1 = lodash.sum(array);
-// console.log(sum1);
 
-// const evenNumbers = lodash.filter(array, (num) => num % 2 === 0);
-// console.log(evenNumbers);
+// axios for api call 
 
+
+// module bundling  webpack install get use lodash and axois libaray 
